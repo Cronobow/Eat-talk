@@ -1,0 +1,2 @@
+module Dark::RestaurantsHelper
+end
