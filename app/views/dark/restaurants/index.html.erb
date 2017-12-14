@@ -1,1 +1,14 @@
-Hello dark world
+<h1>餐廳後台</h1>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= restaurant.name %>
+      <%= link_to "Show", dark_restaurant_path(restaurant) %>
+      <%= link_to "Edit", edit_dark_restaurant_path(restaurant) %>
+      <%= link_to "Delete", dark_restaurant_path(restaurant), method: :delete, data:{confirm:"Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Restaurant", new_dark_restaurant_path %>
+
