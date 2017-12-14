@@ -43,6 +43,7 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
+
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
 
@@ -215,3 +216,5 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 # End of https://www.gitignore.io/api/ruby,macos,rails,sublimetext,rubymine+all
+
+/public/uploads/
