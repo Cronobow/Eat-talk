@@ -12,7 +12,7 @@
     <% if restaurant.image? %>
     <%= image_tag restaurant.image, class: "card-img-top"  %>
     <% else %>
-    <img class="card-img-top" src="http://lorempixel.com/300/200/food/1">
+    <img class="card-img-top" src="https://loremflickr.com/300/200/dinner/?random=<%= rand(1..100)%>">
     <% end %>
     <div class="card-body">
       <h4 class="card-title"><%= restaurant.name %></h4>
