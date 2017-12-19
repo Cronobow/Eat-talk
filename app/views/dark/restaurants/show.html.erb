@@ -1,10 +1,36 @@
-<h1><%= @restaurant.name %></h1>
-<%= image_tag @restaurant.image, width: '300px' if @restaurant.image? %>
-Opening Hours:<%= @restaurant.opening_hours %><br>
-Tel: <%= @restaurant.tel %><br>
-Address: <%= @restaurant.address %><br>
-Description:<%= @restaurant.description %><br>
+<div class="container">
 
-<br>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h2><%= @restaurant.name %></h2>
+    </div>
+  </div>
 
-<%= link_to 'Back to index', dark_restaurants_path %>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+      <% if @restaurant.image? %>
+        <%= image_tag @restaurant.image, width: '400px', class: "img-thumbnail mx-auto d-block" %>
+      <% else %>
+        <img class="img-thumbnail mx-auto d-block" src="https://loremflickr.com/400/300/dinner/">
+      <% end %>
+    </div>
+    <div class="col-md-4 mt-3">
+      <ul>
+        <li>Opening Hours:<%= @restaurant.opening_hours %></li>
+        <li>Tel: <%= @restaurant.tel %></li>
+        <li>Address: <%= @restaurant.address %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h3>Description</h3>
+      <p><%= @restaurant.description %></p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5 mb-5">
+    <%= link_to 'Back to index', dark_restaurants_path, class: "btn btn-primary" %>
+  </div>
+</div>
