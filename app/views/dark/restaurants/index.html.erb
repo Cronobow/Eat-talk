@@ -16,6 +16,7 @@
     <% end %>
     <div class="card-body">
       <h4 class="card-title"><%= restaurant.name %></h4>
+      <p><%= link_to restaurant.category.name, dark_restaurant_path(restaurant), class: "badge badge-success" %></p>
       <p class="card-text"><%= restaurant.description %></p>
       <%= link_to "Detail", dark_restaurant_path(restaurant), class: "btn btn-outline-dark" %>
       <hr>
