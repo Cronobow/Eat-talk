@@ -3,6 +3,10 @@
     <h1>餐廳後台</h1>
   </div>
   <div class="col-auto">
+    <%= link_to 'Restaurant', dark_restaurants_path %> |
+    <%= link_to 'Categories', dark_categories_path %>
+  </div>
+  <div class="col-auto">
     <%= link_to "New Restaurant", new_dark_restaurant_path, class: "btn btn-success ml-auto" %>
   </div>
 </div>

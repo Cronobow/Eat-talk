@@ -1,0 +1,2 @@
+module Dark::CategoriesHelper
+end

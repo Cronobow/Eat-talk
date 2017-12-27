@@ -1,0 +1,29 @@
+<div class="row mt-5">
+  <div class="col-auto mr-auto">
+    <h1>餐廳後台</h1>
+  </div>
+  <div class="col-auto">
+    <%= link_to 'Restaurant', dark_restaurants_path %> |
+    <%= link_to 'Categories', dark_categories_path %>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-md-12">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Category Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+        <tr>
+          <th scope="row"><%= category.id %></th>
+          <td><%= category.name %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

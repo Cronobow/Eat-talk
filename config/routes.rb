@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :dark do
     resources :restaurants
+    resources :categories
     root "restaurants#index"
   end
 
