@@ -53,7 +53,7 @@ class Dark::RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :opening_hours, :tel, :address, :description, :image)
+    params.require(:restaurant).permit(:name, :category_id, :opening_hours, :tel, :address, :description, :image)
   end
 
 end
