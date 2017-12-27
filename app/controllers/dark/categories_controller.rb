@@ -6,6 +6,20 @@ class Dark::CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      flash[:notice] = "Successfully created"
+      redirect_to dark_categories_path
+    else
+      @categories = Category.all
+      flash.now[:alert] = @category.errors.full_messages.to_sentence if @category.errors.any?
+      render :index
+    end
+
   end
 
 
