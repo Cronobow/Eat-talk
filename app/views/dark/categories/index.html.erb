@@ -22,6 +22,7 @@
         <tr>
           <th>NO #</th>
           <th>Category Name</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +30,7 @@
         <tr>
           <th scope="row"><%= category.id %></th>
           <td><%= category.name %></td>
+          <td><%= link_to 'Delete', dark_category_path(category), method: :delete, data: { confirm: "Are you sure?"} %></td>
         </tr>
         <% end %>
       </tbody>

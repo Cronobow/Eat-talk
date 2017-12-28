@@ -19,7 +19,13 @@ class Dark::CategoriesController < ApplicationController
       flash.now[:alert] = @category.errors.full_messages.to_sentence if @category.errors.any?
       render :index
     end
+  end
 
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    flash[:alert] = "category was successfully deleted"
+    redirect_to dark_categories_path
   end
 
 
