@@ -1,6 +1,5 @@
-class Dark::RestaurantsController < ApplicationController
+class Dark::RestaurantsController < Dark::BaseController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin
 
   def index
     @restaurants = Restaurant.page(params[:page]).per(10)

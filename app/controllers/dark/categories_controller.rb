@@ -1,7 +1,5 @@
-class Dark::CategoriesController < ApplicationController
+class Dark::CategoriesController < Dark::BaseController
   before_action :set_category, only: [:update, :destroy]
-  before_action :authenticate_admin
-
 
   def index
     @categories = Category.all
