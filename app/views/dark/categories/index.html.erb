@@ -6,16 +6,18 @@
     <%= link_to 'Restaurant', dark_restaurants_path %> |
     <%= link_to 'Categories', dark_categories_path %>
   </div>
-  <div>
-    <%= form_for [:dark, @category] do |f| %>
-    <div class="form-group">
+</div>
+<div class="row mt-5">
+  <div class="col-12">
+    <%= form_for [:dark, @category] ,html: { class: "form-inline" } do |f| %>
+    <div class="mr-2">
       <%= f.text_field :name, class: "form-control" %>
-      <%= f.submit class: "btn btn-success" %>
     </div>
+    <%= f.submit class: "btn btn-success" %>
     <% end %>
   </div>
 </div>
-<div class="row mt-5">
+<div class="row mt-4">
   <div class="col-md-12">
     <table class="table table-striped table-bordered">
       <thead>
@@ -30,7 +32,7 @@
         <tr>
           <th scope="row"><%= category.id %></th>
           <td><%= category.name %></td>
-          <td><%= link_to 'Delete', dark_category_path(category), method: :delete, data: { confirm: "Are you sure?"} %></td>
+          <td><%= link_to 'Edit', dark_categories_path(id: category.id) %> | <%= link_to 'Delete', dark_category_path(category), method: :delete, data: { confirm: "Are you sure?"} %></td>
         </tr>
         <% end %>
       </tbody>
