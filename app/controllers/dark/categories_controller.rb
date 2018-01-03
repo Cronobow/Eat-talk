@@ -1,6 +1,6 @@
 class Dark::CategoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:update, :destroy]
   before_action :authenticate_admin
 
 
@@ -27,7 +27,6 @@ class Dark::CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:notice] = "Successfully updated"
       redirect_to dark_categories_path
@@ -39,7 +38,6 @@ class Dark::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
     @category.destroy
     flash[:alert] = "category was successfully deleted"
     redirect_to dark_categories_path
