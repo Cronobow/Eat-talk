@@ -1,1 +1,25 @@
-Hello world
+<div class="row mt-5">
+  <div class="col-auto mr-auto">
+    <h1>餐廳列表</h1>
+  </div>
+</div>
+<div class="card-columns mt-5">
+  <% @restaurants.each do |restaurant| %>
+  <div class="card">
+    <% if restaurant.image? %>
+    <%= image_tag restaurant.image, class: "card-img-top"  %>
+    <% else %>
+    <img class="card-img-top" src="https://loremflickr.com/300/200/dinner/?random=<%= rand(1..30)%>">
+    <% end %>
+    <div class="card-body">
+      <h4 class="card-title"><%= link_to restaurant.name , dark_restaurant_path(restaurant), class: "text-muted" %></h4>
+      <p><%= link_to restaurant.category.name, dark_restaurant_path(restaurant), class: "badge badge-success" %></p>
+      <p class="card-text"><%= truncate(restaurant.description, length: 80) %></p>
+      <%= link_to "Detail", dark_restaurant_path(restaurant), class: "btn btn-outline-dark" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="row justify-content-md-center mt-5 mb-5">
+<%= paginate @restaurants %>
+</div>
