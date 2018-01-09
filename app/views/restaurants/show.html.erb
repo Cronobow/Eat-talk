@@ -47,10 +47,17 @@
     <div class="col-md-8">
         <hr>
         <% @restaurant.comments.each do |comment| %>
-        <h4><%= comment.user.email.split("@").first.titleize %></h4>
-        <p><%= comment.content %></p>
-        <p><small class="text-muted"><%= time_ago_in_words comment.created_at %> ago</small></p>
-        <hr>
+          <h4><%= comment.user.email.split("@").first.titleize %></h4>
+          <p><%= comment.content %></p>
+          <p>
+            <small class="text-muted">
+              <%= time_ago_in_words comment.created_at %> ago
+              <% if current_user.is_admin? %>
+                -- <%= link_to "Delete", restaurant_comment_path(@restaurant, comment), method: :delete , class: "text-danger" %>
+              <% end %>
+            </small>
+          </p>
+          <hr>
         <% end %>
     </div>
   </div>

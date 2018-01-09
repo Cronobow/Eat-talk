@@ -9,6 +9,12 @@ class CommentsController < ApplicationController
     redirect_to restaurant_path(@restaurant)
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy if current_user.is_admin?
+    redirect_to restaurant_path(@restaurant)
+  end
+
   private
 
   def set_restaurant
