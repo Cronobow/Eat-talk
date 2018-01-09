@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
+  before_action :set_restaurant
+
 
   def create
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @comment = @restaurant.comments.build(comment_params)
     @comment.user = current_user
     @comment.save!
@@ -9,6 +10,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 
   def comment_params
     params.require(:comment).permit(:content)
