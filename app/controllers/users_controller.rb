@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :is_current_user?
 
   def show
+    @commented_restaurants = @user.restaurants.uniq
   end
 
   def edit

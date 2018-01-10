@@ -15,6 +15,19 @@
       <p>Intro: <%= @user.intro %></p>
       <p><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary"  %></p>
     </div>
-
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-12 mt-5">
+      <h2>已經評論過餐廳</h2>
+      <div>
+        <% @commented_restaurants.each do |restaurant| %>
+        <ul>
+          <li>
+            <%= link_to restaurant.name, restaurant_path(restaurant) %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
