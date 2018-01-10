@@ -11,7 +11,10 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy if current_user.is_admin?
+    if current_user.is_admin?
+      @comment.destroy
+      flash[:notice] = "Comment successfully deleted"
+    end
     redirect_to restaurant_path(@restaurant)
   end
 

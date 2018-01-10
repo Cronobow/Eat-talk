@@ -1,12 +1,18 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
-      <%= @user.avatar %>
+      <% if @user.avatar? %>
+        <%= image_tag @user.avatar, width: '300px', class: "img-thumbnail mx-auto d-block" %>
+      <% else %>
+        <img class="img-thumbnail mx-auto d-block" src="https://loremflickr.com/400/300/dinner/">
+      <% end %>
     </div>
     <div class="col-md-4">
       <h3><%= @user.name %></h3>
       <p>Email: <%= @user.email %></p>
       <p>Intro: <%= @user.intro %></p>
+      <p><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary"  %></p>
     </div>
+
   </div>
 </div>
