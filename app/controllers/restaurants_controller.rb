@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show]
+  before_action :set_restaurant, only: [:show, :dashboard]
 
   def index
     @restaurants = Restaurant.all.page(params[:page]).per(9)
@@ -13,6 +13,9 @@ class RestaurantsController < ApplicationController
 
   def show
     @comment = Comment.new
+  end
+
+  def dashboard
   end
 
   private
