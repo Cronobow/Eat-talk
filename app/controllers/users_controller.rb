@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user
+  before_action :is_current_user?
 
   def show
   end
@@ -23,6 +24,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def is_current_user?
+    if @user != current_user
+      flash[:alert] = "No permission !"
+      redirect_to root_path
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :avatar, :intro)
