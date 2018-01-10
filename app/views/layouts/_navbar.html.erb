@@ -11,6 +11,7 @@
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hi, <%= current_user.email %></a>
           <div class="dropdown-menu dropdown-menu-right">
             <%= link_to "進入後台", dark_restaurants_path, class: "dropdown-item" if current_user.is_admin? %>
+            <%= link_to('關於我', user_path(current_user), class: "dropdown-item") %>
             <%= link_to('修改密碼', edit_user_registration_path, class: "dropdown-item") %>
             <%= link_to('登出', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
           </div>
