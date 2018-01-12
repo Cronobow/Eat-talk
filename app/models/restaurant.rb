@@ -9,5 +9,8 @@ class Restaurant < ApplicationRecord
   has_many :favorited_users, through: :favorites, source: :user
 
 
+  def is_favorited?(user)
+    self.favorited_users.include?(user)
+  end
 
 end

@@ -11,6 +11,7 @@
       <p><%= link_to restaurant.category.name, restaurant_path(restaurant), class: "badge badge-success" %></p>
       <p class="card-text"><%= truncate(restaurant.description, length: 80) %></p>
       <%= link_to "Detail", restaurant_path(restaurant), class: "btn btn-outline-dark" %>
+      <%= render partial: "share/favorite", locals: {restaurant: restaurant} %>
     </div>
   </div>
   <% end %>
