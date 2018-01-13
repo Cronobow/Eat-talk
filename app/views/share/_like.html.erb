@@ -1,0 +1,5 @@
+<% if not restaurant.is_liked?(current_user) %>
+  <%= link_to fa_icon("thumbs-o-up"), like_restaurant_path(restaurant), method: :post, class: "text-primary" %>
+<% else %>
+  <%= link_to fa_icon("thumbs-up"), unlike_restaurant_path(restaurant), method: :post, class: "text-primary" %>
+<% end %>

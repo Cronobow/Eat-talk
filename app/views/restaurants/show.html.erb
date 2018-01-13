@@ -3,6 +3,7 @@
     <div class="col-md-8">
       <h2><%= @restaurant.name %></h2>
       <%= render partial: "share/favorite", locals: {restaurant: @restaurant} %>
+      <%= render partial: "share/like", locals: {restaurant: @restaurant} %>
     </div>
   </div>
   <div class="row justify-content-center mt-5">
