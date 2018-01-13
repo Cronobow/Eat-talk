@@ -2,6 +2,7 @@
   <div class="row justify-content-center mt-5">
     <div class="col-md-8">
       <h2><%= @restaurant.name %></h2>
+      <%= render partial: "share/favorite", locals: {restaurant: @restaurant} %>
     </div>
   </div>
   <div class="row justify-content-center mt-5">
@@ -20,7 +21,6 @@
         <li>Address: <%= @restaurant.address %></li>
       </ul>
       <%= link_to "Dashboard", dashboard_restaurant_path(@restaurant),class: "btn btn-primary"  %>
-      <%= render partial: "share/favorite", locals: {restaurant: @restaurant} %>
     </div>
   </div>
 

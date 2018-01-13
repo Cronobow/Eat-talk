@@ -1,5 +1,5 @@
 <% if not restaurant.is_favorited?(current_user) %>
-  <%= link_to 'Favorite', favorite_restaurant_path(restaurant), method: :post, class: "btn btn-primary" %>
+  <%= link_to fa_icon("heart-o"), favorite_restaurant_path(restaurant), method: :post, class: "text-danger" %>
 <% else %>
-  <%= link_to 'Unfavorite', unfavorite_restaurant_path(restaurant), method: :post, class: "btn btn-info" %>
+  <%= link_to fa_icon("heart"), unfavorite_restaurant_path(restaurant), method: :post, class: "text-danger" %>
 <% end %>
