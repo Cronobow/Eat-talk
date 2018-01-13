@@ -1,25 +1,34 @@
 <div class="container">
-  <h1>餐廳最新動態</h1>
+  <div class="row mt-5">
+    <h1>餐廳最新動態</h1>
+  </div>
   <div class="row justify-content-center mt-5">
-    <div class="col-md-5">
-      <div>
-        <h3>最新餐廳</h3>
-
+    <div class="col-md-6">
+      <div class="card"">
+        <div class="card-header">
+          <h3>最新餐廳</h3>
+        </div>
         <% @recent_restaurants.each do |restaurant| %>
-        <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
-        <p><%= restaurant.category.name %></p>
-        <p><%= restaurant.description %></p>
+        <div class="card-body">
+          <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+          <p class="badge badge-success"><%= restaurant.category.name %></p>
+          <p class="card-text"><%= restaurant.description %></p>
+        </div>
         <hr>
         <% end %>
       </div>
     </div>
-    <div class="col-md-5">
-      <div>
-        <h3>最新評論</h3>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>最新評論</h3>
+        </div>
         <% @recent_comments.each do |comment| %>
-        <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
-        <p><%= comment.content %></p>
-        <p>by <%= link_to comment.user.name, user_path(comment.user) %></p>
+        <div class="card-body">
+          <h4 class="card-title"><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
+          <p class="card-text"><%= comment.content %></p>
+          <p class="card-text">by <%= link_to comment.user.name, user_path(comment.user) %></p>
+        </div>
         <hr>
         <% end %>
       </div>
