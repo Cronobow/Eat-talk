@@ -37,6 +37,7 @@ gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'pg', '~> 0.21.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 
 group :production do
 end
