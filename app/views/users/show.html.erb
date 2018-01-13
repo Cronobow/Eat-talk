@@ -18,15 +18,22 @@
   </div>
   <div class="row justify-content-center mt-5">
     <div class="col-md-12 mt-5">
-      <h2>已經評論過餐廳</h2>
-      <div>
-        <% @commented_restaurants.each do |restaurant| %>
-        <ul>
-          <li>
-            <%= link_to restaurant.name, restaurant_path(restaurant) %>
-          </li>
-        </ul>
-        <% end %>
+      <div class="card">
+        <div class="card-header">
+          <h4><%= @commented_restaurants.count %> 間已經評論過的餐廳</h4>
+        </div>
+        <div class="card-body">
+          <% @commented_restaurants.each do |restaurant| %>
+            <div class="my-restaurant">
+              <% if restaurant.image? %>
+                <%= image_tag restaurant.image %>
+              <% else %>
+                <img class="card-img" src="https://loremflickr.com/<%= rand(140..180)%>/<%= rand(100..120)%>/dinner/?random=<%= rand(1..30)%>">
+              <% end %>
+              <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
