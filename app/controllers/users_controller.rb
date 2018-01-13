@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user
-  before_action :is_current_user?
+  before_action :is_current_user?, except:[:show]
 
   def show
     @commented_restaurants = @user.restaurants.uniq
