@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user
-  before_action :is_current_user?, except:[:show]
+  before_action :set_user, except: [:index]
+  before_action :is_current_user?, except: [:index, :show]
+
+  def index
+    @users = User.all
+  end
 
   def show
     @commented_restaurants = @user.restaurants.uniq
