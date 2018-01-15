@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, except: [:index, :feeds]
+  before_action :set_restaurant, except: [:index, :feeds, :ranking]
 
   def index
     @restaurants = Restaurant.all.page(params[:page]).per(9)
@@ -9,6 +9,10 @@ class RestaurantsController < ApplicationController
   def feeds
     @recent_restaurants = Restaurant.order(created_at: :desc).limit(10)
     @recent_comments = Comment.order(created_at: :desc).limit(10)
+  end
+
+  def ranking
+
   end
 
   def show
