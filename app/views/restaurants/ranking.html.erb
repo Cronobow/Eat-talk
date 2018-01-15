@@ -1,1 +1,22 @@
-ranking
+<div class="container">
+  <div class="row mt-5">
+    <h1>餐廳排行榜</h1>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card"">
+        <div class="card-header">
+          <h3>Top 10 最愛餐廳</h3>
+        </div>
+        <% @top_restaurants.each do |restaurant| %>
+        <div class="card-body">
+          <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant) %> <span class="text-danger"><%= fa_icon("heart") %> + <%= restaurant.favorites_count %></span></h4>
+          <p class="badge badge-success"><%= restaurant.category.name %></p>
+          <p class="card-text"><%= restaurant.description %></p>
+        </div>
+        <hr>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
