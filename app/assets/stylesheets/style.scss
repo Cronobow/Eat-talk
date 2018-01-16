@@ -14,3 +14,21 @@
   text-align: center;
 }
 
+
+.user-list{
+  display: inline-block;
+  margin:5px 10px;
+  width: 170px;
+}
+
+.user-list img {
+  height: 100px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.user-list p {
+  margin-top:10px;
+  text-align: center;
+}
+
