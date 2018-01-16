@@ -5,7 +5,7 @@
   <div class="row justify-content-center mt-5">
     <div class="col">
       <% @users.each do |user| %>
-        <div class="user-list">
+        <div class="user-list align-top">
           <% if user.avatar? %>
             <%= image_tag user.avatar, width: '100px', class: "img-thumbnail mx-auto d-block" %>
           <% else %>
