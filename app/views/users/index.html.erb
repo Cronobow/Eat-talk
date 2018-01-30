@@ -19,6 +19,7 @@
           </p>
           <p>
             <%= render partial: "share/follow", locals: {user: user} if user != current_user %>
+            <%= render partial: "share/friend", locals: {user: user} if user != current_user %>
           </p>
         </div>
       <% end %>
